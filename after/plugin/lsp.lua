@@ -17,7 +17,11 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-	ensure_installed = {'pylsp', 'luau_lsp'},
+	ensure_installed = {
+    'pylsp', 
+    'luau_lsp', 
+    'gopls'
+  },
 	handlers = {
 		lsp_zero.default_setup,
 		lua_ls = function()
