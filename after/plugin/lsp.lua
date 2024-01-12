@@ -19,30 +19,31 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
 	ensure_installed = {
     'pylsp', 
-    'luau_lsp', 
-    'gopls'
+    'gopls',
+    'luau_lsp'
   },
-	handlers = {
-		lsp_zero.default_setup,
-		lua_ls = function()
-			local lua_opts = lsp_zero.nvim_lua_ls()
-			require('lspconfig').lua_ls.setup(lua_opts)
-		end,
-	}
+  handlers = {
+    lsp_zero.default_setup
+  }
 })
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 
 cmp.setup({
-	sources = {
-		{name = 'path'},
-		{name = 'nvim_lsp'},
-		{name = 'nvim_lua'},
-	},
-	formatting = lsp_zero.cmp_format(),
-	mapping = cmp.mapping.preset.insert({
-		['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+  sources = {
+    {name = 'path'},
+    {name = 'nvim_lsp'},
+    {name = 'nvim_lua'},
+  },
+  select_behaviour = 'insert',
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
+  },
+  formatting = lsp_zero.cmp_format(),
+  mapping = cmp.mapping.preset.insert({
+    ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
 		['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
 		['<C-y>'] = cmp.mapping.confirm({ select = true }),
 		['<C-Space>'] = cmp.mapping.complete(),
