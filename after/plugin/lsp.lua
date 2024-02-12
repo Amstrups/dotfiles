@@ -28,10 +28,28 @@ require('mason-lspconfig').setup({
 	ensure_installed = {
     'pylsp', 
     'gopls',
-    'luau_lsp'
+    'lua_ls'
   },
   handlers = {
-    lsp_zero.default_setup
+    lsp_zero.default_setup,
+    lua_ls = function()
+      local lua_opts = lsp_zero.nvim_lua_ls()
+      require('lspconfig').lua_ls.setup(lua_opts)
+    end,
+    pylsp = function()
+      require('lspconfig').pylsp.setup {
+        settings = {
+          pylsp = {
+            plugins = {
+              pycodestyle = {
+                ignore = {'E501'},
+                --maxLineLength = 100
+              }
+            }
+          },
+        } 
+      }
+    end,
   }
 })
 
