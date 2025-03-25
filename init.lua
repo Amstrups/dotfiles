@@ -1,4 +1,4 @@
-vim.g.mapleader = ' '
-require('plugins')
-require('options')
-require('remap')
+require('config.options')
+require('config.remap')
+require('config.tolearn')
+require("config.lazy")
