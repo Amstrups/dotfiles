@@ -8,7 +8,7 @@ PROMPT='$ '
 
 # Path
 GOPATH="$HOME/go"
-PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$GOPATH/bin:$HOME/Library/Android/sdk/emulator"
+PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$GOPATH/bin"
 
 REPO_DIR="~/Repositories"
 
