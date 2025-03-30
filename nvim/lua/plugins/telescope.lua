@@ -1,6 +1,6 @@
 return {
 	'nvim-telescope/telescope.nvim',
-	config = function ()
+	config = function()
 		local builtin = require('telescope.builtin')
 
 		vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
@@ -11,5 +11,18 @@ return {
 		vim.keymap.set('n', '<leader>fr', builtin.lsp_references, {})
 		vim.keymap.set('n', '<leader>a', builtin.marks, {})
 		vim.keymap.set('n', '<leader>kk', builtin.keymaps, {})
+
+		-- ToLearnList
+		local cmds = require('config.tolearn').commands
+		local finders = require('telescope.finders')
+		local pickers = require('telescope.pickers')
+
+		local tl_cmds = pickers.new({
+			finder = finders.new_table(cmds)
+		})
+
+		vim.keymap.set('n', '<leader>tl', function()
+			tl_cmds:find()
+		end)
 	end,
 }

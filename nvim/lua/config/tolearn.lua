@@ -1,15 +1,10 @@
-local tolearn = {
-	"':bd': close current buffer",
-	"':marks': list current marks",
+local M = {
+	commands = {
+		"':bd': close current buffer",
+		"':marks': list curreAt marks",
+		"(fugitive) 's': stage",
+		"(fugitive) 'cc': create commit",
+	}
 }
 
-function spit()
-	for _,v in pairs(tolearn) do
-		print(v)
-	end
-end 
-
-spit()
-
-
-vim.keymap.set('n', '<leader>tl', spit)
+return M
