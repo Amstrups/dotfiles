@@ -1,0 +1,7 @@
+REPO_DIR="~/Repositories"
+
+# Alias (Directiories)
+alias d="cd ~/Desktop"
+alias gr="cd $REPO_DIR" 
+alias efl="cd $REPO_DIR/EFL" 
+alias dot="cd $REPO_DIR/dotfiles" 

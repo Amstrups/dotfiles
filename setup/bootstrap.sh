@@ -14,3 +14,10 @@ _dot "zshrc"
 _dot "tmux.conf"
 _config_dir "nvim"
 
+if [ ! -f "$PWD/dir_aliases" ]; then
+	touch "$PWD/dir_aliases"
+fi
+
+if [ ! -L ~/.dir_aliases ]; then
+	ln -s "$PWD/dir_aliases" ~/.dir_aliases
+fi
