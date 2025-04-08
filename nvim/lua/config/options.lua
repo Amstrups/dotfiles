@@ -41,3 +41,6 @@ opt.splitbelow = true -- Put new windows below current
 opt.splitkeep = "screen"
 opt.splitright = true -- Put new windows right of current
 opt.virtualedit = "block" -- Allow cursor to move where there is no text in visual block mode
+
+-- LSP/Diagnostics
+vim.diagnostic.config({virtual_text = true})

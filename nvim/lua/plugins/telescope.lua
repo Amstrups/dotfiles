@@ -3,9 +3,18 @@ return {
 	config = function()
 		local builtin = require('telescope.builtin')
 
+
 		vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
 		vim.keymap.set('n', '<leader>pb', function()
-			builtin.buffers()
+			builtin.buffers {
+				attach_mappings = function(_, map)
+					map({ "n", "i" }, "<C-t>", function(_prompt_bufnr)
+						require('telescope.actions').delete_buffer(_prompt_bufnr)
+					end)
+
+					return true
+				end
+			}
 		end, {})
 		vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 		vim.keymap.set('n', '<leader>fr', builtin.lsp_references, {})
