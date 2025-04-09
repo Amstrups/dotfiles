@@ -11,7 +11,6 @@ return {
 					map({ "n", "i" }, "<C-t>", function(_prompt_bufnr)
 						require('telescope.actions').delete_buffer(_prompt_bufnr)
 					end)
-
 					return true
 				end
 			}
@@ -20,6 +19,7 @@ return {
 		vim.keymap.set('n', '<leader>fr', builtin.lsp_references, {})
 		vim.keymap.set('n', '<leader>a', builtin.marks, {})
 		vim.keymap.set('n', '<leader>kk', builtin.keymaps, {})
+		vim.keymap.set('n', '<leader>w', builtin.spell_suggest, {})
 
 		-- ToLearnList
 		local cmds = require('config.tolearn').commands
