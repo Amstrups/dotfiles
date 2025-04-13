@@ -28,8 +28,8 @@ return {
 				config =
 						function()
 							require('mason-lspconfig').setup({
+								automatic_installation = false,
 								ensure_installed = {
-									'gopls',
 									'lua_ls'
 								}
 							})
