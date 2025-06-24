@@ -40,6 +40,7 @@ alias gitroot='cd $(git rev-parse --show-toplevel)'
 
 # Alias (Misc)
 alias e="nvim ."
+alias vi="nvim"
 
 dockthis() {
   docker run -it --rm -v "$PWD":/workdir -w /workdir $1

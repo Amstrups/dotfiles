@@ -1,3 +1,4 @@
+# run from dotfiles root
 _dot() {
 	if [ -f ./$1 ] && [ ! -L ~/.$1 ];  then
 		ln -s $PWD/"$1" ~/.$1

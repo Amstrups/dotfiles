@@ -1,7 +1,9 @@
-REPO_DIR="~/Repositories"
+DEV_DIR="~/dev"
 
 # Alias (Directiories)
-alias d="cd ~/Desktop"
-alias gr="cd $REPO_DIR" 
-alias efl="cd $REPO_DIR/EFL" 
-alias dot="cd $REPO_DIR/dotfiles" 
+alias desk="cd ~/Desktop"
+alias dev="cd $DEV_DIR" 
+alias dot="cd $DEV_DIR/dotfiles" 
+
+# Alias (Project specific)
+alias efl="cd $DEV_DIR/EFL" 
