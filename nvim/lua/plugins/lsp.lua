@@ -11,10 +11,12 @@ local function on_attach(_, bufnr)
 		vim.diagnostic.open_float(window_opts)
 	end, opts)
 	vim.keymap.set('n', '<leader>ca', function() vim.lsp.buf.code_action() end, opts)
-	--vim.keymap.set('n', '<leader>vrr', function() vim.lsp.buf.references() end, opts)
+	vim.keymap.set('n', '<leader>w', function() vim.lsp.buf.references() end, opts)
 	vim.keymap.set('n', '<leader>vrn', function() vim.lsp.buf.rename() end, opts)
 	--vim.keymap.set('i', '<C-h>', function() vim.lsp.buf.signature_help() end, opts)
-	vim.keymap.set('n', '<leader>e', function() vim.lsp.buf.format() end, opts)
+	vim.keymap.set('n', '<leader>e', function()
+		vim.lsp.buf.format()
+	end, opts)
 end
 
 return {
@@ -46,7 +48,7 @@ return {
 			--
 			local lspconfig = require 'lspconfig'
 
-			lspconfig.lua_ls.setup {
+			vim.lsp.config('lua_ls', {
 				on_init = function(client)
 					if client.workspace_folders then
 						local path = client.workspace_folders[1].name
@@ -79,9 +81,16 @@ return {
 				settings = {
 					Lua = {}
 				},
-			}
+			})
 
-			lspconfig.gopls.setup({
+			vim.lsp.config('gopls', {
+				on_attach = function()
+					print("attaching")
+					on_attach()
+				end
+			})
+
+			vim.lsp.config('clangd', {
 				on_attach = on_attach,
 			})
 
