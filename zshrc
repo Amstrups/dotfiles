@@ -21,20 +21,6 @@ alias zc="nvim ~/.zshrc"
 alias sc="source ~/.zshrc"
 alias nvc="cd ~/.config/nvim && nvim ."
 
-# Alias (Git)
-git_push_upstream () {
-	branch="$(git rev-parse --abbrev-ref HEAD)"
-	git push -u origin branch
-}
-
-alias ga="git add ."
-alias gc="git commit"
-alias gs="git status"
-alias gl="git log --oneline"
-alias gp="git push"
-alias gpu="git_push_upstream"
-alias gitroot='cd $(git rev-parse --show-toplevel)'
-
 # Alias (Misc)
 alias e="nvim ."
 alias vi="nvim"
