@@ -5,7 +5,8 @@ fi
 
 # Prompt
 setopt PROMPT_SUBST
-PROMPT='%B[%*] %~ %F{red}${vcs_info_msg_0_}%f%b$ '
+# PROMPT='%B[%*] %~ %F{red}${vcs_info_msg_0_}%f%b$ '
+PROMPT=$'%B\u2192 %F{179}%d%f '
 
 # Path
 GOPATH="$HOME/go"
