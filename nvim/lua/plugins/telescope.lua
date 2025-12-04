@@ -19,7 +19,7 @@ return {
 		vim.keymap.set('n', '<leader>fr', builtin.lsp_references, {})
 		vim.keymap.set('n', '<leader>a', builtin.marks, {})
 		vim.keymap.set('n', '<leader>kk', builtin.keymaps, {})
-		vim.keymap.set('n', '<leader>w', builtin.spell_suggest, {})
+		vim.keymap.set('n', '<leader>q', builtin.spell_suggest, {})
 
 		-- ToLearnList
 		local cmds = require('config.tolearn').commands
