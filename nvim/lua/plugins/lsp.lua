@@ -92,6 +92,19 @@ return {
 
 			vim.lsp.config('clangd', {
 				on_attach = on_attach,
+				cmd = { 'clangd', '--background-index', '--clang-tidy', '--log=verbose' },
+				init_options = {
+					fallbackFlags = { '--std=c11' }
+				},
+				filetypes = { "c", "h", "cpp" },
+				root_markers = { ".git", "compile_commands.json", "src" },
+				settings = {
+					clangd = {
+						compilationDatabasePath = "build",
+						usePlaceholders = true,
+						completeUnimported = true,
+					},
+				},
 			})
 
 			local cmp        = require('cmp')
@@ -119,7 +132,7 @@ return {
 					['<tab>'] = cmp.mapping.confirm({ select = true }),
 				}),
 				experimental = { -- Trying ghost text for some time
-					ghost_text = true,
+					ghost_text = false, -- didn't like it
 				},
 			}
 
