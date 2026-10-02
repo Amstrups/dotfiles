@@ -1,0 +1,6 @@
+jq
+ripgrep
+luarocks
+tree-sitter
+tree-sitter-cli
+neovim

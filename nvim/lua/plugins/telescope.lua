@@ -2,9 +2,17 @@ return {
 	'nvim-telescope/telescope.nvim',
 	config = function()
 		local builtin = require('telescope.builtin')
+	local file_ignore_patterns = {
+			"bin/",
+			"obj/"
+		}
 
 
-		vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
+		vim.keymap.set('n', '<leader>pf', function()
+			builtin.find_files({
+				file_ignore_patterns = file_ignore_patterns,
+			})
+		end , {})
 		vim.keymap.set('n', '<leader>pb', function()
 			builtin.buffers {
 				attach_mappings = function(_, map)

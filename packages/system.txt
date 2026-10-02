@@ -1,0 +1,7 @@
+bash-completion
+
+wl-clipboard
+
+man-db
+
+rsync

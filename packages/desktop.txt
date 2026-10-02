@@ -1,0 +1,11 @@
+hyprland
+rofi
+waybar
+
+foot
+
+nautilus
+grim
+slurp
+
+firefox

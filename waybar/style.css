@@ -1,0 +1,62 @@
+* {
+		margin: 0;
+		padding: 0;
+
+		font-family: "0xProto Nerd Font";
+    font-size: 14px;
+		font-weight: 600;
+
+		border: none;
+		border-radius: 0;
+
+}
+
+button {
+    padding: 0 2px;
+		margin: 0;
+		font-size: 22px;
+		/*color: #ffebcd; */
+}
+
+window#waybar {
+		background-color: alpha(#000000,.33);
+}
+
+window>* {
+	margin:0;
+
+}
+
+widget {
+	margin: 0px;
+}
+
+widget:nth-child(even) {
+	background-color: alpha(#000000, .5);
+}
+
+
+widget > * {
+	color: #faf7f1;
+	padding: 0 8px;
+}
+
+widget:nth-child(even) > * {
+	color: #E67F00;
+}
+
+#workspaces {
+	padding: 0;
+}
+
+#workspaces button  {
+	color: #5f6465;
+	background-color: #222222;
+	padding: 2px 4px;
+}
+
+#workspaces button.active {
+	background-color: #A85A19;
+	color: #faf7f1;
+}
+

@@ -1,0 +1,31 @@
+configuration {
+  show-icons: true;
+  drun-display-format: "{name}";
+  display-drun: " 󰍉 ";
+  hover-select: true;
+}
+
+* {
+  font: "JetBrainsMono Nerd Font 12";
+
+  bg:     #0f1115;
+  bg-alt: #161a21;
+  text:   #e7e7e7;
+  muted:  #aab0ba;
+
+  border: #4a5160;
+  select: #20242d;
+
+  spacing: 10;
+}
+
+window {
+  location: center;
+  anchor: center;
+  width: 920px;
+
+  background-color: rgba(24, 24, 24, 0.96);
+  border: 2px;
+  border-color: @border;
+  border-radius: 1px;
+}

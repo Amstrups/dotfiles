@@ -15,7 +15,7 @@ local function on_attach(_, bufnr)
 	vim.keymap.set('n', '<leader>vrn', function() vim.lsp.buf.rename() end, opts)
 	--vim.keymap.set('i', '<C-h>', function() vim.lsp.buf.signature_help() end, opts)
 	vim.keymap.set('n', '<leader>e', function()
-		vim.lsp.buf.format()
+		vim.lsp.buf.format({ async = false })
 	end, opts)
 end
 
@@ -84,19 +84,20 @@ return {
 			})
 
 			vim.lsp.config('gopls', {
-				on_attach = function()
-					print("attaching")
-					on_attach()
-				end
+				on_attach = on_attach,
+			})
+
+			vim.lsp.config('pylsp', {
+				on_attach = on_attach,
 			})
 
 			vim.lsp.config('clangd', {
 				on_attach = on_attach,
 				cmd = { 'clangd', '--background-index', '--clang-tidy', '--log=verbose' },
 				init_options = {
-					fallbackFlags = { '--std=c11' }
+					-- fallbackFlags = { '--std=c11' }
 				},
-				filetypes = { "c", "h", "cpp" },
+				filetypes = { "c", "cpp" },
 				root_markers = { ".git", "compile_commands.json", "src" },
 				settings = {
 					clangd = {

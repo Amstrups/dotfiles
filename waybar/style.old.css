@@ -1,0 +1,83 @@
+@import url("./colorschemes/lava.css");
+
+@define-color bg-shade alpha(#000000,.33);
+@define-color color9 #51FA9F;
+
+* {
+		color: #AAAAAA;
+
+		font-family: "0xProto Nerd Font";
+    font-size: 14px;
+		font-weight: 600;
+
+		border: none;
+
+}
+
+button {
+    padding: 0 2px;
+		margin: 0;
+		font-size: 22px;
+		/*color: #ffebcd; */
+}
+
+window#waybar {
+		background-color: @bg-shade;
+}
+
+
+
+
+#clock,
+#cpu,
+#memory,
+#network,
+#pulseaudio {
+		margin: 0;
+		padding: 0 4px;
+		border-width: 2px;
+		border-style: solid;
+}
+
+
+#workspaces {
+    padding: 0px 0px;
+}
+
+#workspaces button {
+  all: initial;
+  /* Remove GTK theme values (waybar #1351) */
+  padding: 4px 12px;
+  background-color: #9df8e6;
+}
+
+#workspaces button:nth-child(even) {
+	background-color: white;
+}
+
+#workspaces button.empty > * {
+  color: #000000;
+}
+
+#workspaces button.active {
+  background-color: #005F7B;
+}
+
+#workspaces button:hover {
+
+  background-color: #cdd6f4;
+}
+
+#workspaces button.urgent {
+  background-color: #f38ba8;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
