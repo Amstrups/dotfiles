@@ -27,11 +27,10 @@ hl.monitor(monitors.secondary)
 -------------------
 ----- IMPORTS -----
 -------------------
-
 local colors = require("themes/lava")
 
 require("iobindings")
-require("dwindle")
+require("dwindle") -- layout file
 require("xdgopen")
 
 hl.on("hyprland.start", function()
@@ -41,13 +40,10 @@ end)
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
 -------------------------------
-
--- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
-
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
 
-local uniform_margin = 1
+local uniform_margin = 0
 
 hl.config({
 	general = {
@@ -70,19 +66,6 @@ hl.config({
 
 		-- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
 		allow_tearing    = false,
-	},
-
-
-	decoration = {
-		rounding       = 0,
-		rounding_power = 0,
-
-		shadow         = {
-			enabled      = false,
-			range        = 20,
-			render_power = 6,
-			color        = "0xee0f0f0f",
-		},
 	},
 
 	animations = {
@@ -139,9 +122,6 @@ hl.bind("SUPER + down", hl.dsp.focus({ direction = "down" }))
 hl.bind("SUPER + J", hl.dsp.focus({ direction = "down" }))
 hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd('grim -g "$(slurp)" - | wl-copy'))
 
--- Custom shortcuts
-hl.bind("SUPER + SHIFT + P", hl.dsp.window.resize({ x = 1300, y = 700, "exact" }))
-
 -------------------------------------------
 ---- WINDOWS AND WORKSPACES(+KEYBINDS) ----
 -------------------------------------------
@@ -167,8 +147,7 @@ add_workspace(5, monitors.secondary.output)
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
--- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
-hl.bind("SUPER + C", hl.dsp.window.close())
+hl.bind("SUPER + escape", hl.dsp.window.close())
 
 hl.bind("SUPER + Q", hl.dsp.exec_cmd(terminal))
 hl.bind("SUPER + E", hl.dsp.exec_cmd(fileManager))
