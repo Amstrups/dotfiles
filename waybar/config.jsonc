@@ -6,24 +6,23 @@
 
 		"height": 28, // Waybar height (to be removed for auto height)
 		// "width": 1280, // Waybar width
-		"spacing": 0, // Gaps between modules (4px)
+		"spacing": 8, // Gaps between modules (4px)
 		// "margin": 4 ,
 
 		// Choose the order of the modules
 		"modules-left": [
 				// "privacy",
 				// "temperature",
-			"hyprland/workspaces"
+			"hyprland/workspaces",
+				"clock"
 		],
 		"modules-center": [],
 		"modules-right": [
-				"cpu",
-				"memory",
-				"network",
 				"pulseaudio",
-				"clock"
+				"network",
+				"memory",
+				"cpu"
 		],
-
 		"hyprland/workspaces": {
 			"persistent-workspaces": {
 				"*": [1,2,3, 4,5]

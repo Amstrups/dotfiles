@@ -22,28 +22,20 @@ window#waybar {
 		background-color: alpha(#000000,.33);
 }
 
-window>* {
+window > * {
 	margin:0;
-
 }
 
 widget {
+	background-color: #222222;
 	margin: 0px;
 }
 
-widget:nth-child(even) {
-	background-color: alpha(#000000, .5);
-}
-
-
 widget > * {
-	color: #faf7f1;
+	color: #919799;
 	padding: 0 8px;
 }
 
-widget:nth-child(even) > * {
-	color: #E67F00;
-}
 
 #workspaces {
 	padding: 0;
