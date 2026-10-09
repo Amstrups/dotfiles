@@ -57,10 +57,9 @@
 		},
 		"pulseaudio": {
 				// "scroll-step": 1, // %, can be a float
-				"format": "I: {volume}% O: {format_source} I/O",
-				"format-muted": "Muted/{format_source} I/O",
-				"format-sink" : "{volume}%",
-				"format-source": "{volume}%"
+				"format": "I:{volume}% {format_source}",
+				"format-muted": "I: Muted {format_source}",
+				"format-source": "O:{volume}%"
 				// "on-click": "pavucontrol"
 		},
 		"temperature" : {
