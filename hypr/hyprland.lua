@@ -1,6 +1,6 @@
 local terminal    = "foot"
 local fileManager = "nautilus"
-local menu        = "rofi -show drun -theme ~/.config/rofi/launcher.rasi -hover-select -modes drun,window,ssh"
+local menu        = "rofi -show drun -theme ~/.config/rofi/launcher.rasi"
 
 ------------------
 ---- MONITORS ----
@@ -46,7 +46,7 @@ hl.env("HYPRCURSOR_SIZE", "24")
 local uniform_margin = 0
 
 hl.config({
-	general = {
+	general    = {
 		gaps_in          = uniform_margin / 2,
 		gaps_out         = {
 			top = 2,
@@ -153,7 +153,7 @@ hl.bind("SUPER + Q", hl.dsp.exec_cmd(terminal))
 hl.bind("SUPER + E", hl.dsp.exec_cmd(fileManager))
 hl.bind("SUPER + space", hl.dsp.exec_cmd(menu))
 -- hl.bind("SUPER + SHIFT + space", hl.dsp.exec_cmd(windows))
-hl.bind("SUPER + M",
+hl.bind("SUPER + SHIFT + F12",
 	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind("SUPER + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind("SUPER + P", hl.dsp.window.pseudo())

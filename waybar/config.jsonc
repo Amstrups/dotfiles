@@ -47,6 +47,7 @@
 			"tooltip": false
 		},
 		"network": {
+				"interval": 30,
 				// "interface": "wlp2*", // (Optional) To force the use of this interface
 				"format-wifi": "NET: {essid} ({signalStrength}%)",
 				"format-ethernet": "NET: {ipaddr}/{cidr}",

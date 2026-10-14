@@ -1,8 +1,10 @@
 configuration {
+	/* modes: "drun,window,filebrowser,recursivebrowser,ssh,run"; */
+	modes: "drun,window,ssh,run";
   show-icons: true;
-  drun-display-format: "{name}";
-  display-drun: " 󰍉 ";
-  hover-select: true;
+  /* hover-select: true; */
+	sidebar-mode: true;
+	tokenise: true;
 }
 
 * {
@@ -17,6 +19,10 @@ configuration {
   select: #20242d;
 
   spacing: 10;
+
+	background-color: transparent;
+
+	text-color: @text;
 }
 
 window {
@@ -37,8 +43,9 @@ mainbox {
   background-color: transparent;
 }
 
+/* Begin: Input bar */
 inputbar {
-  children: [ prompt, entry ];
+	children:   [ "prompt","entry","overlay","num-filtered-rows","textbox-num-sep","num-rows","case-indicator" ];
   background-color: @bg-alt;
   border-color: transparent;
   padding: 12px 14px;
@@ -57,16 +64,39 @@ entry {
   placeholder-color: rgba(231,231,231,0.35);
 }
 
+num-filtered-rows {
+	expand:     false;
+	text-color: Gray;
+}
+
+num-rows {
+	expand:     false;
+	text-color: Gray;
+}
+
+textbox-num-sep {
+	expand:     false;
+	str:        "/";
+	text-color: Gray;
+}
+
+case-indicator {
+	spacing:    10;
+	text-color: @text; 
+}
+/* End: Input bar */
+
+
 listview {
   background-color: transparent;
 
-  columns: 5;
-  lines: 4;
+  columns: 1;
+  lines: 10;
 
   spacing: 10;
   cycle: true;
   dynamic: false;
-  scrollbar: false;
+  scrollbar: true;
 
   layout: vertical;
   fixed-columns: true;
@@ -74,7 +104,7 @@ listview {
 }
 
 element {
-  orientation: vertical;
+  orientation: horizontal;
   children: [ element-icon, element-text ];
 
   background-color: transparent;
@@ -82,7 +112,7 @@ element {
   border-color: transparent;
   border-radius: 1px;
 
-  padding: 22px 14px;
+  padding: 8px 14px;
   spacing: 8px;
 }
 
@@ -93,15 +123,19 @@ element selected {
 }
 
 element-icon {
-  background-color: transparent;
   size: 32px;
-  horizontal-align: 0.5;
+
+	vertical-align: 0.5;
+
+  background-color: transparent;
 }
 
 element-text {
-  background-color: transparent;
+	padding: 0px 8px;
+	vertical-align: 0.5;
+
   text-color: @muted;
-  horizontal-align: 0.5;
+  background-color: transparent;
 }
 
 element selected element-text {
@@ -109,5 +143,17 @@ element selected element-text {
 }
 
 element-text highlight {
-  text-color: @text;
+	text-color: @text;
 }
+
+button {
+	cursor:     pointer;
+	spacing:    0;
+	text-color: @muted;
+	background-color: transparent;
+}
+
+button selected {
+	background-color: @select;
+}
+
