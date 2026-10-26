@@ -11,13 +11,13 @@
 
 		// Choose the order of the modules
 		"modules-left": [
-				// "privacy",
 				// "temperature",
-			"hyprland/workspaces",
+				"hyprland/workspaces",
 				"clock"
 		],
 		"modules-center": [],
 		"modules-right": [
+				"privacy",
 				"pulseaudio",
 				"network",
 				"memory",

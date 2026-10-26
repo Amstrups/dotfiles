@@ -7,4 +7,5 @@ hl.config({
 	},
 })
 
-hl.bind("SUPER + J", hl.dsp.layout("togglesplit")) -- dwindle only
+hl.bind("SUPER + I", hl.dsp.layout("togglesplit")) -- dwindle only
+
